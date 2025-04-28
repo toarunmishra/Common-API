@@ -95,6 +95,15 @@ public class LocationServiceImpl implements LocationService {
 		return districtBlockList;
 	}
 
+	@Override
+	public List<DistrictBlock> getAllDistrictBlocks() {
+		List<DistrictBlock> districtBlockList = new ArrayList<DistrictBlock>();
+		districtBlockList = (List<DistrictBlock>) locationDistrictBlockRepository.findAll();
+
+
+		logger.info("getDistrictBlocks response " + (districtBlockList.size() > 0 ? districtBlockList.size() : null));
+		return districtBlockList;	}
+
 	/**
 	 * Stete repository
 	 */

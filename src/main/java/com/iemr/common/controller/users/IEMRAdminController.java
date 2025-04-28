@@ -1057,5 +1057,12 @@ public class IEMRAdminController {
 		// Return 404 if the token is not found in the cookies
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body("JWT token not found");
 	}
+	@RequestMapping(value = "getAllAsha", method = { RequestMethod.GET })
+	public ResponseEntity<Map<String ,Object>> getAllAsha(){
+		Map<String,Object> response = new HashMap<>();
+		response.put("data",iemrAdminUserServiceImpl.getAllUser());
+		return ResponseEntity.ok(response);
+
+	}
 
 }

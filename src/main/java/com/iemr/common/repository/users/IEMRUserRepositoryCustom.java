@@ -21,6 +21,7 @@
 */
 package com.iemr.common.repository.users;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Modifying;
@@ -32,6 +33,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.iemr.common.data.users.User;
 import com.iemr.common.data.users.UserSecurityQMapping;
+
+import javax.swing.event.ListDataEvent;
 
 @Repository
 public interface IEMRUserRepositoryCustom extends CrudRepository<User, Long> {
@@ -77,5 +80,15 @@ public interface IEMRUserRepositoryCustom extends CrudRepository<User, Long> {
 	User getAllExistingUsers();
 	
 	User findByUserID(Long userID);
+
+	@Query("SELECT u FROM User u WHERE u.designationID = :designationID")
+	List<User> findUserByDesignationID (@Param("designationID") Integer designationID);
+
+
+	@Query("SELECT u FROM User u WHERE u.serviceProviderID= :serviceProviderID ORDER By u.userName")
+	ArrayList<User> EmployeeDetails4(@Param("serviceProviderID") Integer serviceProviderID);
+
+
+
 
 }

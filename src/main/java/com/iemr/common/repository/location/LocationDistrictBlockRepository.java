@@ -40,4 +40,6 @@ public interface LocationDistrictBlockRepository extends CrudRepository<District
 	public Set<Object[]> findBy(@Param("id") int id);
 	
 	DistrictBlock findByBlockID(Integer blockID);
+
+
 }

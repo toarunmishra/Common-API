@@ -221,6 +221,11 @@ public class IEMRAdminUserServiceImpl implements IEMRAdminUserService {
 	}
 
 	@Override
+	public Object getAllUser() {
+		return iEMRUserRepositoryCustom.findUserByDesignationID(19);
+	}
+
+	@Override
 	public List<User> userAuthenticate(String userName, String password) throws Exception {
 		List<User> users = iEMRUserRepositoryCustom.findByUserNameNew(userName);
 		if (users.size() != 1) {

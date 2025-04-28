@@ -115,7 +115,6 @@ public class LocationController {
 		}
 		return response.toString();
 	}
-
 	@CrossOrigin
 	@Operation(summary = "Get city")
 	@RequestMapping(value = "/city/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON, headers = "Authorization")

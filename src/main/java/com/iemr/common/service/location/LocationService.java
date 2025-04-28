@@ -40,6 +40,7 @@ public interface LocationService {
 	public List<Districts> findStateDistrictBy(int id);
 
 	public List<DistrictBlock> getDistrictBlocks(int id);
+	public List<DistrictBlock> getAllDistrictBlocks();
 
 	public abstract List<CityDetails> getCities(int id);
 

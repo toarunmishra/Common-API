@@ -45,6 +45,8 @@ import com.iemr.common.utils.redis.RedisSessionException;
 
 public interface IEMRAdminUserService
 {
+	Object getAllUser();
+
 	List<User> userAuthenticate(String userName, String password) throws Exception;
 
 	List<User> userExitsCheck(String userName);
@@ -117,6 +119,7 @@ public interface IEMRAdminUserService
 	String generateTransactionIdForPasswordChange(User user) throws Exception;
 
 	User getUserById(Long userId) throws IEMRException;
+
 
 
 	

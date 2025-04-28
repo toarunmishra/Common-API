@@ -42,6 +42,9 @@ import com.iemr.common.utils.response.OutputResponse;
 
 import io.swagger.v3.oas.annotations.Operation;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 @PropertySource("classpath:application.properties")
 
@@ -77,6 +80,7 @@ public class EmployeeSignatureController {
 		return ResponseEntity.badRequest().body(new byte[] {});
 
 	}
+
 
 	@CrossOrigin()
 	@Operation(summary = "Fetch file from central")

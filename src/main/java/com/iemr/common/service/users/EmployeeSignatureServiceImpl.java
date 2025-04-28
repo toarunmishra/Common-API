@@ -21,6 +21,7 @@
 */
 package com.iemr.common.service.users;
 
+import com.iemr.common.data.users.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +34,7 @@ public class EmployeeSignatureServiceImpl implements EmployeeSignatureService {
 	@Autowired
 	EmployeeSignatureRepo employeeSignatureRepo;
 
+
 	
 
 	@Override
@@ -40,6 +42,8 @@ public class EmployeeSignatureServiceImpl implements EmployeeSignatureService {
 		// TODO Auto-generated method stub
 		return employeeSignatureRepo.findOneByUserID(userSignID);
 	}
+
+
 
 	public Boolean existSignature(Long userID) {
 		// TODO Auto-generated method stub

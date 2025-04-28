@@ -22,6 +22,7 @@
 package com.iemr.common.service.users;
 
 import com.iemr.common.data.users.EmployeeSignature;
+import com.iemr.common.data.users.User;
 
 public interface EmployeeSignatureService {
 	
