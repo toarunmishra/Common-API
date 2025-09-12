@@ -245,10 +245,7 @@ public class RegisterBenificiaryServiceImpl implements RegisterBenificiaryServic
 		return OutputMapper.gson().toJson(beneficiary);
 	}
 
-   private void  saveBeneficiarDeathDetails(BeneficiaryModel beneficiaryModel){
 
-
-   }
 
 	private void setSaveDemographicDetails(CommonIdentityDTO identityDTO, BeneficiaryModel beneficiaryModel) {
 		if(null != beneficiaryModel.getI_bendemographics()) {
@@ -277,11 +274,13 @@ public class RegisterBenificiaryServiceImpl implements RegisterBenificiaryServic
 			} 
 
 
-
 			if(null != beneficiaryModel.getIncomeStatus())
 				identityDTO.setIncomeStatus(beneficiaryModel.getIncomeStatus());
 			else
 				identityDTO.setIncomeStatus(beneficiaryModel.getI_bendemographics().getIncomeStatus());
+		}
+		if(beneficiaryModel!=null){
+			updateDeathOfBenificiary(beneficiaryModel);
 		}
 		
 	}
